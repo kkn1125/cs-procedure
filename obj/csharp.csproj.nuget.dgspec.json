@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\kimson\\Kim_Coding\\study\\csharp\\csharp.csproj": {}
+  },
+  "projects": {
+    "C:\\kimson\\Kim_Coding\\study\\csharp\\csharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\kimson\\Kim_Coding\\study\\csharp\\csharp.csproj",
+        "projectName": "csharp",
+        "projectPath": "C:\\kimson\\Kim_Coding\\study\\csharp\\csharp.csproj",
+        "packagesPath": "C:\\Users\\kimson\\.nuget\\packages\\",
+        "outputPath": "C:\\kimson\\Kim_Coding\\study\\csharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kimson\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
