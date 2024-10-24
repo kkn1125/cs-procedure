@@ -13,7 +13,7 @@ class Program
   static string database = "kalis";
   static string user = "root";
   static string password = "Welcome1!";
-  static int port = 3307;
+  static int port = 3306;
   static string connectionString = $"Server={host};Database={database};User={user};Password={password};Port={port};";
 
   static void Main(string[] args)
@@ -81,9 +81,16 @@ class Program
         {"totalRisk", 5}
       };
 
-      // var registerResult = ExecuteRegister("SP_U_REGISTER", registerParameters);
-      // Output(registerResult);
-      // Console.WriteLine("--------------------------------");
+      // SP_M_UPDATE 프로시저 호출 예시
+      var missionUpdateParameters = new Dictionary<string, object> {
+        {"id", 31},
+        {"condition", "on"},
+        {"accId", "collapse"}
+      };
+
+      var registerResult = ExecuteRegister("SP_U_REGISTER", registerParameters);
+      Output(registerResult);
+      Console.WriteLine("--------------------------------");
 
       // var findWebUserResult = ExecuteFindWebUser("SP_W_USERS", findWebUserParameters, true);
       // Output(findWebUserResult);
@@ -101,14 +108,21 @@ class Program
       // var findMissionStartResult = ExecuteFindMissionStart("SP_C_MISSION_START", findMissionStartParameters);
       // Output(findMissionStartResult);
 
-      var findMissionEndResult = ExecuteFindMissionEnd("SP_C_MISSION_END", findMissionEndParameters);
-      Output(findMissionEndResult);
+      // var findMissionEndResult = ExecuteFindMissionEnd("SP_C_MISSION_END", findMissionEndParameters);
+      // Output(findMissionEndResult);
 
+      // var missionUpdateResult = ExecuteMissionUpdate("SP_M_UPDATE", missionUpdateParameters);
+      // Output(missionUpdateResult);
     }
     catch (Exception ex)
     {
       Console.WriteLine("오류: " + ex.Message);
     }
+  }
+
+  static List<Dictionary<string, object>> ExecuteMissionUpdate(string procedureName, Dictionary<string, object> parameters, bool returnSingleRow = false)
+  {
+    return ExecuteStoredProcedureInternal(procedureName, parameters, returnSingleRow);
   }
 
   static List<Dictionary<string, object>> ExecuteFindMissionEnd(string procedureName, Dictionary<string, object> parameters, bool returnSingleRow = false)
