@@ -23,6 +23,7 @@ class Program
       // SP_U_REGISTER 프로시저 호출 예시
       var registerParameters = new Dictionary<string, object>
             {
+                {"id", 1021},
                 {"name", "kq_test2"},
                 {"companyName", "fov2"},
                 {"job1", "1"},
@@ -88,7 +89,7 @@ class Program
         {"accId", "collapse"}
       };
 
-      var registerResult = ExecuteRegister("SP_U_REGISTER", registerParameters);
+      var registerResult = ExecuteRegister("SP_U_REGISTER", registerParameters, true);
       Output(registerResult);
       Console.WriteLine("--------------------------------");
 
